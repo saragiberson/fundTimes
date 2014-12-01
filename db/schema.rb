@@ -11,27 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201213147) do
+ActiveRecord::Schema.define(version: 20141201204503) do
 
   create_table "events", force: true do |t|
     t.string   "name"
+    t.string   "location"
     t.datetime "date_of_event"
+    t.string   "image"
+    t.string   "external_link"
+    t.integer  "total_price"
+    t.text     "description"
+    t.integer  "max_users"
+    t.integer  "min_users"
+    t.boolean  "paid",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
-    t.string   "url"
   end
 
   create_table "user_events", force: true do |t|
     t.integer  "user_id"
     t.integer  "event_id"
-    t.string   "user_role"
+    t.string   "role",           default: "user"
+    t.boolean  "payment_status", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.string   "venmo_id"
+    t.string   "venmo_encrypted_token"
+    t.string   "email"
+    t.string   "twitter_id"
+    t.string   "twitter_handle"
+    t.string   "twitter_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

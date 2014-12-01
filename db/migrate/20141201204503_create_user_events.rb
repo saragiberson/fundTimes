@@ -3,7 +3,8 @@ class CreateUserEvents < ActiveRecord::Migration
     create_table :user_events do |t|
       t.integer :user_id
       t.integer :event_id
-      t.string :user_role
+      t.string :role, default: :user
+      t.boolean :payment_status, default: false
 
       t.timestamps
     end
