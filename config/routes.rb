@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # get '/login', to: 'sessions#new', as: :new_login
 
   get '/auth/:provider/callback' => 'sessions#create'
-  # delete '/logout'  => 'sessions#destroy'
+  get '/logout'  => 'sessions#destroy', :as => :logout
+
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
