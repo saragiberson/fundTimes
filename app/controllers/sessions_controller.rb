@@ -1,24 +1,9 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:create, :new]
-  skip_before_action :set_client, only: [:create, :new, :destroy]
-
   def create
-    @user = User.login_from_omniauth(auth_hash)
-    log_in(@user)
-    redirect_to '/'
-  end
-
-  def destroy
-    log_out
-    redirect_to root_url
-  end
-
-  protected
-
-  def auth_hash
-    info             = request.env['omniauth.auth']
-    session[:token]  = info["credentials"]["token"]
-    session[:secret] = info["credentials"]["secret"]
-    info
+    auth = request.env["omniauth.auth"]
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    redirect_to root_url, :notice => "Signed in!"
   end
 end
+
