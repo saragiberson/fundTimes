@@ -1,4 +1,10 @@
 <header>
+  <h1>
   <div class="brand-name">fundtimes</div>
-  <a href="/auth/twitter" class="login"><spann class="twitter"></span></a>
+</h1>
+  <%= link_to "Log In with Twitter", '/auth/twitter' %>
+  <%= link_to "Log Out", logout_path, :method => :delete %>
+
+  <% if current_user %><%= yield %><% end %>
+  <%= yield %>
 </header>
