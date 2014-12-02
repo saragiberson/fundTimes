@@ -37,6 +37,8 @@ gem 'figaro'
 
 gem 'pry'
 
+gem 'omniauth-venmo'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

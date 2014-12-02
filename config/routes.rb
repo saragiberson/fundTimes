@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get '/logout'  => 'sessions#destroy', :as => :logout
 
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
