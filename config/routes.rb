@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :users
   resources :events
 
-  get '/login', to: 'sessions#new', as: :new_login
+  # get '/login', to: 'sessions#new', as: :new_login
 
   get '/auth/:provider/callback' => 'sessions#create'
-  delete '/logout'  => 'sessions#destroy'
+  # delete '/logout'  => 'sessions#destroy'
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

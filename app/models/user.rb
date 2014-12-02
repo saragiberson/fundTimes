@@ -1,3 +1,4 @@
+require 'pry'
 class User < ActiveRecord::Base
   has_many :user_events
   has_many :events, through: :user_events
@@ -6,7 +7,9 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["user_info"]["name"]
+      user.name = auth["info"]["name"]
+      user.twitter_handle = auth["info"]["nickname"]
+
     end
   end
 end

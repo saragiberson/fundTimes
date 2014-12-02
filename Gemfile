@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # OmniAuth Gems
-gem 'omniauth'
-# gem 'omniauth-twitter'
+# gem 'omniauth'
+gem 'omniauth-twitter'
 
 gem 'twitter'
 
@@ -33,6 +33,8 @@ gem 'twitter'
 gem 'spring',        group: :development
 
 gem 'figaro'
+
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
