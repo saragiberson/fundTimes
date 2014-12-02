@@ -1,2 +1,7 @@
 <h2> <%= @event.name %> </h2>
-<p> <%= @event.location %> </p>
+<ul> 
+  <li><%= @event.location %></li>
+  <li><%= @event.date_of_event %></li>
+  <figure><%= image_tag @event.image %></figure>
+</ul>
+

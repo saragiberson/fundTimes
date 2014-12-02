@@ -1,8 +1,12 @@
-<h3> be worry-free one minute at a time.  </h3>
+<h3> Create a new event! </h3>
 
 <%= form_for @event do |f| %>
 <%= f.text_field :name, :placeholder => "event name" %>
+<%= f.text_field :image, :placeholder => "event img url" %>
 <%= f.text_field :location, :placeholder => "event location" %>
+<%= f.date_select :date_of_event %>
+<br>
+<%= f.text_area :description %>
 <%= f.submit %>
 <% end %>
 
