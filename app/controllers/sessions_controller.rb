@@ -19,12 +19,6 @@ protected
   def auth
     request.env["omniauth.auth"]
   end
-
-  # def update_user_with_venmo(auth)
-  #   current_user.venmo_id              = auth["uid"]
-  #   current_user.venmo_encrypted_token = auth["credentials"]["token"]
-  #   current_user.save
-  # end
 end
 
 
