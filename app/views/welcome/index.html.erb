@@ -1,11 +1,10 @@
-<h1> Welcome to fundtimes! </h1>
 
-<%# current_user.events do |event| %>
-<%#= event.name %>
-<%# end %>
+<h1> Welcome to fundtimes! </h1>
 
 <% if logged_in? %>
   <% current_user.events do |event| %>
   <%= event.name %>
   <% end %>
 <% end %>
+
+

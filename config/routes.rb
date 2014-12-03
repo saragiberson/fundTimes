@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/logout'  => 'sessions#destroy', :as => :logout
+  get '/auth/venmo', as: 'venmo_login'
 
 
   # You can have the root of your site routed with "root"
