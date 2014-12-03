@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
+    User.create_or_update(auth, current_user)
     redirect_to root_url, :notice => "Signed in!"
   end
 
@@ -16,5 +14,4 @@ protected
   def auth
     request.env["omniauth.auth"]
   end
-
 end

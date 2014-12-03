@@ -1,8 +1,9 @@
+<h1> Welcome to fundtimes! </h1>
 
-  <h1> Welcome to fundtimes! </h1>
-
-   <% if logged_in? %>
-    <% current_user.events do |event| %>
+<% if logged_in? %>
+  <% current_user.events do |event| %>
     <%= event.name %>
-    <% end %>
   <% end %>
+<% end %>
+
+<%= current_user.venmo_id %>
