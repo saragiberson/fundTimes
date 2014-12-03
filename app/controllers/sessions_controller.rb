@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def create
-    User.create_or_update(auth, current_user)
+    if auth[:provider] == "twitter"
+      @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_twitter_with_omniauth(auth)
+      session[:user_id] = @user.id
+    elsif auth[:provider] == "venmo"
+      current_user.update_user_with_venmo(auth)
+    end
     redirect_to root_url, :notice => "Signed in!"
   end
 
@@ -14,4 +19,12 @@ protected
   def auth
     request.env["omniauth.auth"]
   end
+
+  # def update_user_with_venmo(auth)
+  #   current_user.venmo_id              = auth["uid"]
+  #   current_user.venmo_encrypted_token = auth["credentials"]["token"]
+  #   current_user.save
+  # end
 end
+
+
