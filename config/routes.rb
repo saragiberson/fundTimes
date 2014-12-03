@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :events
 
+  get 'user/venmo' => 'users#venmo'
+
   # get '/login', to: 'sessions#new', as: :new_login
 
   get '/auth/:provider/callback' => 'sessions#create'
