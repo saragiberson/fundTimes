@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
     elsif auth[:provider] == "venmo"
       current_user.update_user_with_venmo(auth)
     end
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to user_path(current_user)
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Signed out!"
+    redirect_to root_url
   end
 
 protected
