@@ -3,7 +3,6 @@
   <ol>
     <% current_user.events.each do  |event| %>
     <li><%= link_to event.name, event_path(event) %>
-      <p><%= user_admin?(event) %></p>
         <% end %>
     </li>
 

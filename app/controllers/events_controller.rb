@@ -33,26 +33,3 @@ class EventsController < ApplicationController
 
 end
 
-  # create_table "events", force: true do |t|
-  #   t.string   "name"
-  #   t.string   "location"
-  #   t.datetime "date_of_event"
-  #   t.string   "image"
-  #   t.string   "external_link"
-  #   t.integer  "total_price"
-  #   t.text     "description"
-  #   t.integer  "max_users"
-  #   t.integer  "min_users"
-  #   t.boolean  "paid",          default: false
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-  # end
-
-  # create_table "user_events", force: true do |t|
-  #   t.integer  "user_id"
-  #   t.integer  "event_id"
-  #   t.string   "role",           default: "user"
-  #   t.boolean  "payment_status", default: false
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-  # end
