@@ -1,1 +1,5 @@
-<%= link_to "My Events", events_path, class: "btn btn-default" %>
+
+<%= link_to "[see my existing events]", events_path %> 
+<%= link_to "[create a new event]", new_event_path %> 
+
+<%= image_tag current_user.twitter_image_url %>
