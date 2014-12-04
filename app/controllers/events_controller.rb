@@ -35,7 +35,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if (@event.admin_id == current_user.id) 
        redirect_to event_path(@event)
-      flash[:notice] = "Sorry, but since you are the admin of this event you can't join as a guest."
+      flash[:notice] = "Sorry, Admins cannot join events as guests."
       elsif 
         (@event.total_guests.count +1) < @event.max_users
         @event.users << current_user

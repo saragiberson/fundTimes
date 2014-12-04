@@ -7,9 +7,9 @@ class Event < ActiveRecord::Base
   end
 
   def price_per_person 
-    price_per_person = self.total_price/self.max_users.to_f
-    price_per_person = price_per_person/100.0
-
+    dollars_with_remainder = self.total_price/self.max_users.to_f
+    dollars_and_cents = dollars_with_remainder.round(2)
+    dollars_and_cents
   end
 
   def total_guests
