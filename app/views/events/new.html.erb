@@ -2,10 +2,13 @@
   <%= form_for @event do |f| %>
   <%= f.text_field :name, :placeholder => "event name" %>
   <%= f.text_field :image, :placeholder => "event img url" %>
+  <%= f.text_field :external_link, :placeholder => "external link" %>
   <%= f.text_field :location, :placeholder => "event location" %>
+  <%= f.number_field :min_users, :placeholder => "min # guests" %>
+  <%= f.number_field :max_users, :placeholder => "max # guests" %>
   <%= f.date_select :date_of_event %>
   <br>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, :placeholder => "event description" %>
   <%= f.submit %>
   <% end %>
   <br>

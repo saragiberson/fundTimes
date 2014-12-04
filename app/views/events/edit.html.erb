@@ -1,0 +1,16 @@
+<h3> Edit <%= @event.name %> </h3>
+  <%= form_for @event do |f| %>
+  <%= f.text_field :name, :placeholder => @event.name %>
+  <%= f.text_field :image, :placeholder => @event.image %>
+  <%= f.text_field :location, :placeholder => @event.location %>
+  <%= f.text_field :external_link, :placeholder => @event.external_link %>
+  <%= f.date_select :date_of_event %>
+  <br>
+  <%= f.text_area :description, :placeholder => @event.description %>
+  <%= f.submit %>
+  <% end %>
+  <br>
+
+<%= link_to "[take me back to my profile]", user_path(current_user) %>
+<br>
+<%= link_to "[see my existing events]", events_path %> 
