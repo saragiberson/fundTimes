@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :venmo?, only: [:venmo]
+  skip_before_action :venmo?, only: [:venmo, :show]
   def venmo
   end
 
