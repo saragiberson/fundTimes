@@ -5,7 +5,7 @@
     <br>
    <td> <%= link_to "[EDIT this event]", edit_event_path(@event) %> </td> 
     <br>
-   <td><%= link_to "[DELETE this event]", event_path(@event), :method => :delete, confirm: "Are you sure?" %>
+   <td><%= link_to "[DELETE this event]", event_path(@event), :method => :delete %>
    </td>
 </table>
 <h2> <%= @event.name %> </h2>
