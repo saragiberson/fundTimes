@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_filter :require_login, only: [:create, :destroy]
-  skip_before_filter :venmo?, only: [:create, :destroy]
+  skip_before_action :require_login, only: [:create, :destroy]
+  skip_before_action :venmo?, only: [:create, :destroy]
   
   def create
     if auth[:provider] == "twitter"
