@@ -1,14 +1,19 @@
+<table>
+  <tr>
+   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
+    <br>
+   <td> <%= link_to "[create a new event]", new_event_path %> </td>
+    <br>
+  </tr>
+</table>
 
 <h2>
   <ol>
     <% current_user.events.each do  |event| %>
     <li><%= link_to event.name, event_path(event) %>
-        <% end %>
+    <% end %>
     </li>
-
   </ol>
 </h2>
 
-<%= link_to "[take me back to my profile]", user_path(current_user) %>
-<br>
-<%= link_to "[create a new event]", new_event_path %> 
+

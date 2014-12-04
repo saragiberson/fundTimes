@@ -1,3 +1,12 @@
+<table>
+  <tr>
+   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
+    <br>
+   <td> <%= link_to "[my existing events]", events_path %> </td>
+    <br>
+  </tr>
+</table>
+
 <h3> Create a new event! </h3>
   <%= form_for @event do |f| %>
   <%= f.label :name, "Event Name" %>
@@ -36,7 +45,5 @@
   <br>
   <br> 
 
-<%= link_to "[take me back to my profile]", user_path(current_user) %>
-<br>
-<%= link_to "[see my existing events]", events_path %> 
+
 

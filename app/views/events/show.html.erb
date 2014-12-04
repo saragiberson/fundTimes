@@ -1,6 +1,15 @@
+<table>
+   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
+    <br>
+   <td> <%= link_to "[my existing events]", events_path %> </td>
+    <br>
+   <td> <%= link_to "[EDIT this event]", edit_event_path(@event) %> </td> 
+    <br>
+   <td><%= link_to "[DELETE this event]", event_path(@event), :method => :delete, confirm: "Are you sure?" %>
+   </td>
+</table>
 <h2> <%= @event.name %> </h2>
  <figure><%= image_tag @event.image %></figure>
-
  <%= button_to "Join this!", event_join_path(@event.id) %>
   <ul> 
     <li>Where? : <%= @event.location %></li>
@@ -15,16 +24,9 @@
     <li>How many are invited (max) : <%= @event.max_users %></li>
     <li>How much total? : $<%= @event.total_price %></li>
     <li>How much per person? : $<%= @event.price_per_person %></li>
+    <li>What are we planning?! : <p> <%= @event.description %> </p> </li>
+    <li>Read more on the external link: <p> <%= link_to @event.external_link %> </p></li>
   </ul>
+ 
 
-  <h3>What are we planning?!</h3>
-    <p><%= @event.description %></p>
-<p> Read more: <%= link_to @event.external_link %> </p>
 
-<%= link_to "[take me back to my profile]", user_path(current_user) %>
-<br>
-<%= link_to "[see my existing events]", events_path %> 
-<br>
-<%= link_to "[EDIT this event]", edit_event_path(@event) %> 
-<br>
-<%= link_to "[DELETE]", event_path(@event), :method => :delete, confirm: "Are you sure?" %> 
