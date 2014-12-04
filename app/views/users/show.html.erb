@@ -1,11 +1,15 @@
 
-<h1><% if current_user %>
-  Welcome, <% end %><%= current_user.name %>!
-</h1>
+<div class = "header">
+  <h1><% if current_user %>
+    Welcome, <% end %><%= current_user.name %>!
+  </h1>
+</div>
 
+<div class = "user-img">
+  <%= image_tag current_user.twitter_image_url %>
+</div>
 
-
- <%= image_tag current_user.twitter_image_url %> 
-
-
-<%= link_to "My Events", events_path, class: "btn btn-default" %>
+<div class = "event-links">
+  <%= link_to "[see my existing events]", events_path %> 
+  <%= link_to "[create a new event]", new_event_path %>
+</div>
