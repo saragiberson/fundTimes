@@ -1,12 +1,29 @@
 <h3> Edit <%= @event.name %> </h3>
   <%= form_for @event do |f| %>
+  <%= f.label :name, "Event Name" %><br>
   <%= f.text_field :name, :placeholder => @event.name %>
+  <br>
+  <%= f.label :image, "Image url" %><br>
   <%= f.text_field :image, :placeholder => @event.image %>
+  <br>
+  <%= f.label :location, "Location of Event" %><br>
   <%= f.text_field :location, :placeholder => @event.location %>
+  <br>
+  <%= f.label :external_link, "External Link for Event" %><br>
   <%= f.text_field :external_link, :placeholder => @event.external_link %>
+  <br>
+  <%= f.label :date_select, "Event Date" %><br>
   <%= f.date_select :date_of_event %>
   <br>
+  <%= f.label :description, "Event Description" %><br>
   <%= f.text_area :description, :placeholder => @event.description %>
+  <br>
+  <%= f.label :min_users, "Min # of Guests" %><br>
+  <%= f.number_field :min_users, :placeholder => @event.min_users %>
+  <br>
+  <%= f.label :max_users, "Max # of Guests" %><br>
+  <%= f.number_field :max_users, :placeholder => @event.max_users %>
+  <br>
   <%= f.submit %>
   <% end %>
   <br>
@@ -14,3 +31,5 @@
 <%= link_to "[take me back to my profile]", user_path(current_user) %>
 <br>
 <%= link_to "[see my existing events]", events_path %> 
+<br>
+<%= link_to "[DELETE]", event_path(@event), :method => :delete, confirm: "Are you sure?" %> 
