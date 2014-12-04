@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  skip_before_filter :require_login, only: [:create, :destroy]
+  skip_before_filter :venmo?, only: [:create, :destroy]
+  
   def create
     if auth[:provider] == "twitter"
       @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_twitter_with_omniauth(auth)
