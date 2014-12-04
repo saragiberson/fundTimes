@@ -31,6 +31,23 @@ class EventsController < ApplicationController
     redirect_to event_path(@event)
   end
 
+  def join
+    @event = Event.find(params[:id])
+    if (@event.admin_id == current_user.id) 
+       redirect_to event_path(@event)
+      flash[:notice] = "Sorry, but since you are the admin of this event you can't join as a guest."
+      elsif 
+        (@event.total_guests.count +1) < @event.max_users
+        @event.users << current_user
+        @event.save 
+        redirect_to event_path(@event)
+        flash[:notice] = "Sorry, but this event has reached it's max."
+      else
+      redirect_to event_path(@event)
+      flash[:notice] = "You're going to this event!!!"
+    end
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
@@ -40,7 +57,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :location, :date_of_event, :image, :description, :min_users, :max_users, :external_link)
+    params.require(:event).permit(:name, :location, :date_of_event, :image, :description, :min_users, :max_users, :external_link, :total_price)
   end
 
   def user_admin?(event)

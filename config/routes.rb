@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create', :as => :login
   get '/logout'  => 'sessions#destroy', :as => :logout
   get '/auth/venmo', as: 'venmo_login'
-  get 'user/venmo' => 'users#venmo'
+  get 'user/venmo' => 'users#venmo', :as => :venmo
+  post 'events/:id/join' => 'events#join', :as => :event_join
 
 
   # You can have the root of your site routed with "root"
