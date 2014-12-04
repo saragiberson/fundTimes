@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
     User.find(self.admin_id)
   end
 
-  def price_per_person    
+  def price_per_person 
     price_per_person = self.total_price/self.max_users.to_f
     price_per_person = price_per_person/100.0
 

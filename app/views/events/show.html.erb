@@ -5,13 +5,14 @@
   <ul> 
     <li>Where? : <%= @event.location %></li>
     <li>When? : <%= @event.date_of_event %></li>
-    <li>How many people are going: 
+    <li>How many people have joined as a guest? : 
       <% if @event.total_guests.count == 0 %>
         <%= 1 %>
       <% else %> 
         <%= @event.total_guests.count %>
       <% end %>
     </li>
+    <li>How many are invited (max) : <%= @event.max_users %></li>
     <li>How much total? : $<%= @event.total_price %></li>
     <li>How much per person? : $<%= @event.price_per_person %></li>
   </ul>
