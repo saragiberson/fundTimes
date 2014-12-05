@@ -17,19 +17,11 @@ class Event < ActiveRecord::Base
     self.users.find_all {|user| user.id != self.admin_id} 
   end
 
-  def current_rate_of_attendance
-    attendance_rate = (self.users.count) / self.max_users.to_f
-    attendance_rate = attendance_rate.round(2)
-    attendance_rate*100
-  end
-
-  ## if max_users has been satisfied, we need to disable to the button to join.
-
-  def charge_the_user
-    reciever_email      = admin.email
+  def charge_the_user(user)
+    reciever_email      = self.admin.email
     amount              = 0.02  #self.price_per_person
     note                = "I just paid #{self.admin.name} for #{self.name}! Payment made via Fundtimes."
-    payer_access_token  = User.venmo_encrypted_token
+    payer_access_token  = user.venmo_encrypted_token
 
     conn = Faraday.new(:url => 'https://api.venmo.com') do |faraday|
       faraday.request  :url_encoded
@@ -39,16 +31,31 @@ class Event < ActiveRecord::Base
     response = conn.post '/payments', { email: reciever_email, amount: amount, note: note, access_token: payer_access_token}
   end
 
-  # def make_total_payment
-  #   users = []
-  #   total_cost = self.total_price - self.price_per_person
-  #     while total_commitment = total_ && self.paid == false
-  #       for user != self.admin 
-  #         charge_the_user
-  #       end
-  #     end
-  #     self.paid = true
-  # end
+  def charge_all_users
+    self.users.each do |user|
+      if user != self.admin
+        charge_the_user(user)
+      end
+    end
+    self.paid = true
+  end
+
+  def full?
+    self.users.count == self.max_users
+  end
+
+  def make_payment
+    if full?
+      charge_all_users
+    end
+  end
+  
+  def current_rate_of_attendance
+   attendance_rate = (self.users.count) / self.max_users.to_f
+   attendance_rate = attendance_rate.round(2)
+   attendance_rate*100
+ end
+
 end
 
  # def self.test(payer, reciever)
