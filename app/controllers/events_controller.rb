@@ -34,17 +34,17 @@ class EventsController < ApplicationController
   def join
     @event = Event.find(params[:id])
     if (@event.admin_id == current_user.id) 
-       redirect_to event_path(@event)
+      redirect_to event_path(@event)
       flash[:notice] = "Sorry, Admins cannot join events as guests."
       elsif 
         (@event.total_guests.count +1) < @event.max_users
         @event.users << current_user
         @event.save 
         redirect_to event_path(@event)
-        flash[:notice] = "Sorry, but this event has reached it's max."
+        flash[:notice] = "You're going to this event!!!"
       else
       redirect_to event_path(@event)
-      flash[:notice] = "You're going to this event!!!"
+      flash[:notice] = "Sorry, but this event has fulfilled its maximum guest amount." 
     end
   end
 
