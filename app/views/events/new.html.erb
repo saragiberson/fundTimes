@@ -26,7 +26,7 @@
   <br>
   <br>
   <%= f.label :max_users, "Max # Guests" %>
-  <%= f.number_field :max_users, :placeholder => "max # guests" %>
+  <%= number_field_tag ':max_users', nil, in: 2...100 %>
   <br>
   <br> 
   <%= f.label :date_of_event, "Select Event Date" %>
