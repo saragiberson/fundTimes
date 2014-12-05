@@ -13,8 +13,8 @@
  <figure><%= image_tag @event.image %></figure>
   <%= button_to "Join this!", event_join_path(@event.id) %>
   <ul> 
-    <li>Where? : <%= @event.location %></li>
-    <li>When? : <%= @event.date_of_event %></li>
+    <li>Where?  <%= @event.location %></li>
+    <li>When?  <%= @event.date_of_event %></li>
     <li>How many people have joined as a guest? : 
       <% if @event.total_guests.count == 0 %>
         <%= 1 %>
@@ -22,12 +22,23 @@
         <%= @event.total_guests.count %>
       <% end %>
     </li>
-    <li>How many are invited (max) : <%= @event.max_users %></li>
-    <li>How much total? : $<%= @event.total_price %></li>
-    <li>How much per person? : $<%= @event.price_per_person %></li>
-    <li>What are we planning?! : <p> <%= @event.description %> </p> </li>
-    <li>Read more on the external link: <p> <%= link_to @event.external_link %> </p></li>
+    <li>How many are invited (max): <%= @event.max_users %></li>
+    <li>How much total? $<%= @event.total_price %></li>
+    <li>How much per person? $<%= @event.price_per_person %></li>
+    <li>What are we planning? <p> <%= @event.description %> </p> </li>
+    <li>Read more: <p> <%= link_to @event.external_link %> </p></li>
   </ul>
- 
-
-
+ <h3>Tracking Progress</h3>
+  <ul> 
+    <li>Paid? 
+      <% if @event.paid == false %>
+        <em> Not yet </em>
+      <% elsif @event.paid == true %> 
+        <em> Payment fulfilled! </em>
+      <% end %>
+    </li>
+    <li>Currently, what is the rate of people who have joined to those who were invited? 
+     <strong> <%= @event.current_rate_of_attendance %> % </strong> 
+     <!-- leaves % in paragraph tag to show rate as a percent -->
+    </li>
+  </ul>
