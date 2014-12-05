@@ -1,3 +1,12 @@
+<div class = "event-links">
+  <table>
+    <tr>
+      <td> <%= link_to "[create new event]", new_event_path %> </td> 
+      <br>
+      <td> <%= link_to "[my existing events]", events_path %> </td>
+   </tr>
+  </table>
+</div>
 
 <div class = "header">
   <h1><% if current_user %>
@@ -7,9 +16,4 @@
 
 <div class = "user-img">
   <%= image_tag current_user.twitter_image_url %>
-</div>
-
-<div class = "event-links">
-  <%= link_to "[see my existing events]", events_path %> 
-  <%= link_to "[create a new event]", new_event_path %>
 </div>

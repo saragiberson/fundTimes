@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   
   def create
     if auth[:provider] == "twitter"
-      @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_twitter_with_omniauth(auth)
+      @user = User.find_by(uid: auth["uid"]) || User.create_twitter_with_omniauth(auth)
       session[:user_id] = @user.id
     elsif auth[:provider] == "venmo"
       current_user.update_user_with_venmo(auth)

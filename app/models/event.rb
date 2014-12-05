@@ -34,6 +34,19 @@ class Event < ActiveRecord::Base
     response = conn.post '/payments', { user_id: user_venmo_id, amount: amount, note: note, access_token: access_token}
   end
 
+  def price_per_person 
+    dollars_with_remainder = self.total_price/self.max_users.to_f
+    dollars_and_cents = dollars_with_remainder.round(2)
+    dollars_and_cents
+  end
+
+  def total_guests
+    # does not include admin of event 
+    self.users.find_all {|user| user.id != self.admin_id} 
+  end
+ 
+  ## if max_users has been satisfied, we need to disable to the button to join.
+
 #   def make_total_payment
 #     users = []
 #     total_cost = self.total_price - self.price_per_person
