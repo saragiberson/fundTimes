@@ -49,7 +49,7 @@ class Event < ActiveRecord::Base
       charge_all_users
     end
   end
-  
+
   def current_rate_of_attendance
    attendance_rate = (self.users.count) / self.max_users.to_f
    attendance_rate = attendance_rate.round(2)
@@ -58,16 +58,4 @@ class Event < ActiveRecord::Base
 
 end
 
- # def self.test(payer, reciever)
-  #   reciever_email = reciever.email
-  #   amount        = 0.02
-  #   note          = "Paid"
-  #   payer_access_token  = payer.venmo_encrypted_token
-
-  #   conn = Faraday.new(:url => 'https://api.venmo.com') do |faraday|
-  #     faraday.request  :url_encoded             # form-encode POST params
-  #     faraday.response :logger                  # log requests to STDOUT
-  #     faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-  #   end
-  #   response = conn.post '/payments', { email: reciever_email, amount: amount, note: note, access_token: payer_access_token}
-  # end
+ 
