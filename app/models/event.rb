@@ -38,6 +38,7 @@ class Event < ActiveRecord::Base
       end
     end
     self.paid = true
+    self.save
   end
 
   def full?
