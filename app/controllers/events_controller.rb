@@ -47,7 +47,6 @@ class EventsController < ApplicationController
     end
     # checking to see if it's time to charge the users
     if @event.users.count == @event.max_users
-      binding.pry
       @event.make_payment
       redirect_to event_path(@event)
       flash[:notice] = "you are going to this event. WE ARE CHARGING THE ADMIN NOW"
