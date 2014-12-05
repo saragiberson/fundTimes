@@ -42,6 +42,11 @@ class EventsController < ApplicationController
         @event.save 
         redirect_to event_path(@event)
         flash[:notice] = "You're going to this event!!!"
+      elsif 
+        (@event.total_guests.count +1) == @event.max_users
+        @event.make_payment
+        redirect_to event_path(@event)
+        flash[:notice] = "WE ARE CHARGING YOU NOW"
       else
       redirect_to event_path(@event)
       flash[:notice] = "Sorry, but this event has fulfilled its maximum guest amount." 
