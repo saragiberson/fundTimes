@@ -39,16 +39,16 @@ class Event < ActiveRecord::Base
     response = conn.post '/payments', { email: reciever_email, amount: amount, note: note, access_token: payer_access_token}
   end
 
-  def make_total_payment
-    users = []
-    total_cost = self.total_price - self.price_per_person
-      while total_commitment = total_ && self.paid == false
-        for user != self.admin 
-          charge_the_user
-        end
-      end
-      self.paid = true
-  end
+  # def make_total_payment
+  #   users = []
+  #   total_cost = self.total_price - self.price_per_person
+  #     while total_commitment = total_ && self.paid == false
+  #       for user != self.admin 
+  #         charge_the_user
+  #       end
+  #     end
+  #     self.paid = true
+  # end
 end
 
  # def self.test(payer, reciever)
