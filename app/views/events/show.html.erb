@@ -1,5 +1,5 @@
-<table>
-   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
+<table style="font-family:'helvetica neue'; font-size:20px;">
+   <td style="padding-right:40px;"> <%= link_to "[my profile]", user_path(current_user) %> </td> 
     <br>
    <td> <%= link_to "[my existing events]", events_path %> </td>
     <br>
@@ -9,23 +9,23 @@
       <td><%= link_to "[DELETE this event]", event_path(@event), :method => :delete %></td>
    <% end %>
 </table>
-<h2> <%= @event.name %> </h2>
+<h1 style="font-family:'Helvetica Neue'; padding-left:40px; font-size:45px; font-weight:lighter;"> <%= @event.name %> </h1>
  <figure><%= image_tag @event.image %></figure>
   <%= button_to "Join this!", event_join_path(@event.id) %>
-  <ul> 
-    <li>Where?  <%= @event.location %></li>
-    <li>When?  <%= @event.date_of_event %></li>
-    <li>How many people have joined as a guest? : 
+  <ul style="list-style:none;"> 
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">Where?  <%= @event.location %></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">When?  <%= @event.date_of_event %></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">How many people have joined as a guest? : 
       <%= @event.users.count  %>
 
     </li>
-    <li>How many are invited (max): <%= @event.max_users %></li>
-    <li>How much total? $<%= @event.total_price %></li>
-    <li>How much per person? $<%= @event.price_per_person %></li>
-    <li>What are we planning? <p> <%= @event.description %> </p> </li>
-    <li>Read more: <p> <%= link_to @event.external_link %> </p></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">How many are invited (max): <%= @event.max_users %></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">How much total? $<%= @event.total_price %></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">How much per person? $<%= @event.price_per_person %></li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">What are we planning? <%= @event.description %> </li>
+    <li style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px;">Read more: <%= link_to @event.external_link %> </li>
   </ul>
- <h3>Tracking Progress</h3>
+ <h3 style="font-family:'helvetica neue'; font-weight:bolder; font-size:30px; color:#555;">Tracking Progress</h3>
   <ul> 
     <li>Paid? 
       <% if @event.paid == false %>
