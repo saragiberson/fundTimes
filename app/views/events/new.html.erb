@@ -8,7 +8,7 @@
 </table>
 
 <h3> Create a new event! </h3>
-  <%= form_for @event do |f| %>
+ <%= form_for @event do |f| %>
   <%= f.label :name, "Event Name" %>
   <%= f.text_field :name, :placeholder => "event name" %>
   <br>
@@ -40,8 +40,10 @@
   <%= f.label :total_price, "TOTAL PRICE" %>
   <%= f.text_field :total_price, :placeholder => "TOTAL PRICE" %>
   <br>
+  <br>
   <%= f.submit %>
   <% end %>
+
   <br>
   <br> 
 

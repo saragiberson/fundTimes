@@ -9,7 +9,7 @@
 
 <h2>
   <ol>
-    <% Event.all.each do  |event| %>
+    <% current_user.events.each do  |event| %>
     <li><%= link_to event.name, event_path(event) %>
     <% end %>
     </li>
