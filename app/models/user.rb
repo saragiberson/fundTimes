@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
    def update_user_with_venmo(auth)
     self.venmo_id              = auth["uid"]
     self.venmo_encrypted_token = auth["credentials"]["token"]
+    self.email                 = auth["info"]["email"]
     self.save
   end
 
