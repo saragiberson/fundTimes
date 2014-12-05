@@ -17,11 +17,6 @@ class Event < ActiveRecord::Base
     self.users.find_all {|user| user.id != self.admin_id} 
   end
 
-  def 
-  end
-
-  ## if max_users has been satisfied, we need to disable to the button to join.
-
   def charge_the_user(user)
     reciever_email      = self.admin.email
     amount              = 0.02  #self.price_per_person
@@ -36,13 +31,23 @@ class Event < ActiveRecord::Base
     response = conn.post '/payments', { email: reciever_email, amount: amount, note: note, access_token: payer_access_token}
   end
 
-  def make_total_payment
+  def charge_all_users
     self.users.each do |user|
       if user != self.admin
         charge_the_user(user)
       end
     end
     self.paid = true
+  end
+
+  def full?
+    self.users.count == self.max_users
+  end
+
+  def make_payment
+    if full?
+      charge_all_users
+    end
   end
   
 end
