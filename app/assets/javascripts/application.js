@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap.min
+//= require html5shiv
+//= require main
+//= require respond.min
+//= require_lib .
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
