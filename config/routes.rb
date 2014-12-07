@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :events
+
+
   # get '/login', to: 'sessions#new', as: :new_login
 
   get '/auth/:provider/callback' => 'sessions#create', :as => :oauth_login
