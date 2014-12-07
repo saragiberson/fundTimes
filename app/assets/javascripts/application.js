@@ -17,5 +17,4 @@
 //= require respond.min
 //= require_lib .
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .

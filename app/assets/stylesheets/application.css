@@ -13,6 +13,6 @@
  *= require_self
  *= require style-dark
  *= require bootstrap-theme.min
- *= require bootstap.min
+ *= require bootstrap.min
  *= require_tree .
  */
