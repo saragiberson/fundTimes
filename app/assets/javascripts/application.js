@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require bootstrap.min
+//= require masonry/jquery.masonry
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
+//= require isotope/jquery.isotope
 //= require html5shiv
 //= require_lib .
 //= require main
