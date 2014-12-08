@@ -1,68 +1,83 @@
-<div class="background container-fluid">
-  <h1 class="page-header"> Create a new event! </h1>
-    <div class="row">
-      <div class="col-md-6">
-         <%= form_for @event, :class => "form-horizontal"  do |f| %>
-          <fieldset>
-        <div class="control-group white">
-          <%= f.label :name, "Event Name" %>
-        </div>
-        <div class="controls">
-          <%= f.text_field :name, :placeholder => "event name", class: "input-lg" %>
-        </div>
-        <div class="control-group white">
-          <%= f.label :image, "Image url" %>
-        </div>
-        <div class="controls">
-          <%= f.text_field :image, :placeholder => "event img url", class: "input-lg" %>
-        </div>
-
-        <div class="control-group white">
-          <%= f.label :external_link, "External Link for Event" %>
-        </div>
-        <div class="controls">
-          <%= f.text_field :external_link, :placeholder => "external link", class: "input-lg" %>
-        </div>
-        <div class="control-group white">
-          <%= f.label :location, "Event Location" %>
-        </div>
-        <div class="controls">
-          <%= f.text_field :location, :placeholder => "event location", class: "input-lg" %>
-        </div>
-        <div class="control-group white">
-          <%= f.label :max_users, "Max # Guests" %>
-        </div>
-        <div class="controls">
-          <%= f.number_field :max_users, :min => 2,  :placeholder => "2" %>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="control-group white">
-          <%= f.label :date_of_event, "Select Event Date" %>
-        </div>
-        <div class="controls">
-          <%= f.date_select :date_of_event %>
-        </div>
-        <div class="control-group white">
-          <%= f.label :description, "Event Description" %>
-        </div>
-        <div class="controls">
-          <%= f.text_area :description, :placeholder => "event description", class: "input-lg" %>
-        </div>
-        <div class="control-group white">
-          <%= f.label :total_price, "TOTAL PRICE" %>
-        </div>
-        <div class="controls">
-          <%= f.text_field :total_price, :placeholder => "TOTAL PRICE", class: "input-lsm" %>
-        </div>
-        <br />
-        <div class="control-group white">
-          <%= f.submit :class => "btn btn-primary btn-sml" %>
-          <% end %>
-        </div> 
+<div class="container-fluid background">
+  <h1 class="page-header main-color"> Create a new event! </h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-right">
+            <%= form_for @event, :class => "form-horizontal"  do |f| %>
+              <fieldset>
+                <div class="form-group">
+                  <div class="control-group">
+                    <div class="controls">
+                      <%= f.label :name, "Event Name", class: "main-color"  %>
+                      <%= f.text_field :name, :placeholder => "event name", class: "input-lg" %>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="control-group">
+                    <div class="controls">
+                        <%= f.label :image, "Image url", class: "main-color" %>
+                        <%= f.text_field :image, :placeholder => "event img url", class: "input-lg" %>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="control-group">
+                    <div class="controls">
+                      <%= f.label :external_link, "External Link for Event", class: "main-color"  %>
+                      <%= f.text_field :external_link, :placeholder => "external link", class: "input-lg" %>
+                    </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                <div class="control-group">
+                  <div class="controls">
+                    <%= f.label :location, "Event Location", class: "main-color" %>
+                    <%= f.text_field :location, :placeholder => "event location", class: "input-lg" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <div class="control-group">
+                  <div class="controls">
+                    <%= f.label :max_users, "Max # Guests", class: "main-color" %>
+                    <%= f.number_field :max_users, :min => 2,  :placeholder => "2" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <div class="control-group">
+                  <div class="controls">
+                    <%= f.label :date_of_event, "Select Event Date", class: "main-color"  %>
+                    <%= f.date_select :date_of_event %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="control-group">
+                  <div class="controls">
+                    <%= f.label :description, "Event Description", class: "main-color" %>
+                    <%= f.text_area :description, :placeholder => "event description", class: "input-lg" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="control-group">
+                  <div class="controls">
+                    <%= f.label :total_price, "Total Price", class: "main-color"  %>
+                    <%= f.text_field :total_price, :placeholder => "total price", class: "input-lsm" %>
+                  </div>
+                </div>
+              </div>
+            <%= f.submit :class => "btn btn-primary btn-sml" %>
+            <% end %>
+            <br />
+            <br />
+            <br />
+            <br />
       </div>
     </div>
   </div>
+</div>
 
 
