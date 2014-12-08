@@ -6,18 +6,18 @@
     Welcome, <% end %><%= current_user.name %>!
 </div>
 
-   <!-- LEFT SIDE -->
+<!-- LEFT SIDE -->
+<div class="row">
+  <div class="col-md-4">  
+    <%= image_tag current_user.twitter_image_url, class: "img-circle" %>
 
-
-  <%= image_tag current_user.twitter_image_url, class: "img-circle" %>
-
-
-  <div class = "event-links">
-  <table>
-    <tr>
-      <td> <%= link_to "[create new event]", new_event_path %> </td> 
+    <div class = "event-links">
+     <%= link_to "[create new event]", new_event_path %> 
       <br>
-      <td> <%= link_to "[my existing events]", events_path %> </td>
+     <%= link_to "[my existing events]", events_path %> 
+    </div>
+  </div>
 
+  <div class="col-md-8">.col-md-8</div>
 </div>
 

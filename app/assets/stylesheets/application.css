@@ -56,3 +56,7 @@ nav {
 .navbar-fixed-top.navbar-expanded {
   padding: 10px;
 }
+
+.navbar a.navbar-brand{
+  background: none;
+}
