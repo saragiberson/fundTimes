@@ -17,10 +17,42 @@ div .col-md-4 .btn {
 .img-circle {
   width: 300px;
   height: 300px;
-  margin: 5% 0 18% 18%;
+  margin: 5% 0 18% 10%;
 }
 
 .bar {
   margin-top: 33%;
-  margin-right: 15%;
+}
+.page-header {
+  color: #fff;
+  font-family: "Raleway";
+  letter-spacing: 0.01em;
+  font-size: 1.8em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  border: none;
+  padding-left: 4%;
+  padding-top: 4%;
+}
+
+.col-md-4 {
+  padding-left: 5%;
+}
+
+h4 {
+  font-family: "Raleway";
+  font-weight: bolder;
+}
+
+.main-color {
+  font-family: "Raleway";
+  font-size: 1em;
+}
+
+.btn {
+  background-color: #666;
+  opacity: 80%;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0;
 }

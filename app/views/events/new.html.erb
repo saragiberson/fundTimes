@@ -1,8 +1,8 @@
 <div class="container-fluid background">
-  <h1 class="page-header main-color"> Create a new event! </h1>
+  <h1 class="page-header"> Create a new event! </h1>
       <div class="container">
         <div class="row">
-          <div class="col-md-6 text-right">
+          <div class="col-lg-4 text-right">
             <%= form_for @event, :class => "form-horizontal"  do |f| %>
               <fieldset>
                 <div class="form-group">
@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <div class="control-group">
                     <div class="controls">
-                      <%= f.label :external_link, "External Link for Event", class: "main-color"  %>
+                      <%= f.label :external_link, "External Link", class: "main-color"  %>
                       <%= f.text_field :external_link, :placeholder => "external link", class: "input-lg" %>
                     </div>
                   </div>
@@ -69,7 +69,7 @@
                   </div>
                 </div>
               </div>
-            <%= f.submit :class => "btn btn-primary btn-sml" %>
+            <%= f.submit :class => "btn btn-md btn-dark btn-default" %>
             <% end %>
             <br />
             <br />
