@@ -15,6 +15,15 @@
   <div class="header-buffer"></div>
   <div class="container">
 
+    <!-- FLASH MESSAGES -->
+<% if flash[:error] %>
+ <h2 class='error bg-info'><%=h flash[:error] %></h2>
+<% end %>
+<% if flash[:notice] -%>
+ <h2 class='notice bg-info'><%=h flash[:notice] %></h2>
+<% end %>
+<!-- END FLASH MESSAGES -->
+
     <%= yield %>
 
   </div>

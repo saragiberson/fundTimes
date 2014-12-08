@@ -1,3 +1,58 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*Place all the styles related to the events controller here.*/
+/*They will automatically be included in application.css.*/
+/*You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+.notice {
+  padding-top: 2%;
+}
+
+.background {
+  background-color: #111;
+}
+
+div .col-md-4 .btn {
+  margin-bottom: 2%;
+}
+
+.img-circle {
+  width: 300px;
+  height: 300px;
+  margin: 5% 0 18% 10%;
+}
+
+.bar {
+  margin-top: 33%;
+}
+.page-header {
+  color: #fff;
+  font-family: "Raleway";
+  letter-spacing: 0.01em;
+  font-size: 1.8em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  border: none;
+  padding-left: 4%;
+  padding-top: 4%;
+}
+
+.col-md-4 {
+  padding-left: 5%;
+}
+
+h4 {
+  font-family: "Raleway";
+  font-weight: bolder;
+}
+
+.main-color {
+  font-family: "Raleway";
+  font-size: 1em;
+}
+
+.btn {
+  background-color: #666;
+  opacity: 80%;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0;
+}

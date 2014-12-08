@@ -1,19 +1,12 @@
-<table>
-  <tr>
-   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
-    <br>
-   <td> <%= link_to "[create a new event]", new_event_path %> </td>
-    <br>
-  </tr>
-</table>
-
-<h2>
-  <ol>
-    <% current_user.events.each do  |event| %>
-    <li><%= link_to event.name, event_path(event) %>
+<h1 class="page-header">All Events</h1>
+  <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
+    <% Event.all.each do |event| %>
+      <%= link_to event_path(event) do %>
+     <div class="item" style="background-image: url(<%= event.image %>);">
+      <div class="event-name">
+        <h3><%= event.name %></h3>
+      </div>
+    </div>
+      <% end %>
     <% end %>
-    </li>
-  </ol>
-</h2>
-
-
+  </div>

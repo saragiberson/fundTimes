@@ -14,7 +14,8 @@ class EventsController < ApplicationController
    @event.users << current_user
    @event.admin_id = current_user.id
    @event.save
-    redirect_to event_path(@event)
+  redirect_to event_path(@event)
+  flash[:notice] = "Successfully created!"
   end
 
   def show
@@ -29,34 +30,37 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.update(event_params)
     redirect_to event_path(@event)
+    flash[:notice] = "Successfully updated!"
   end
 
   def join
     @event = Event.find(params[:id])
-    if (@event.admin_id == current_user.id) 
+    if @event.users.count < @event.max_users 
+      @event.users << current_user
+      @event.save
       redirect_to event_path(@event)
-      flash[:notice] = "Sorry, Admins cannot join events as guests."
-      elsif 
-        (@event.total_guests.count +1) == @event.max_users
-        @event.make_payment
-        redirect_to event_path(@event)
-        flash[:notice] = "WE ARE CHARGING YOU NOW"
-      elsif 
-        (@event.total_guests.count +1) < @event.max_users
-        @event.users << current_user
-        @event.save 
-        redirect_to event_path(@event)
-        flash[:notice] = "You're going to this event!!!"
-      else
-      redirect_to event_path(@event)
-      flash[:notice] = "Sorry, but this event has fulfilled its maximum guest amount." 
+      flash[:notice] = "You're going to this event!!!"
     end
+  end
+
+  def pay
+  # creates custom action only available to admin of event, to trigger the venmo fund transfer process,
+  # once the guests have all accepted their invites (i.e. event reaches goal of max_users)
+    @event = Event.find(params[:id])
+    @event.make_payment
+    redirect_to event_path(@event)
+    flash[:notice] = "Success! We are charging the guests now."
+  end
+
+  def my_events
+    @events = current_user.events.all
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path
+    flash[:notice] = "Event has been successfully deleted."
   end
 
   private
@@ -70,4 +74,3 @@ class EventsController < ApplicationController
   end
 
 end
-
