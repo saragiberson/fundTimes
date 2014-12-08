@@ -1,12 +1,22 @@
-<div class="container">
-  <h1 class="page-header">All Events</h1>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="thumbnail">
-          <% Event.all.each do |event| %>
-          <%= link_to image_tag(event.image, alt: event.name), event %>  
-          <% end %>   
-        </div> 
+<div class="background container-fluid">
+    <h1 class="page-header">All Events</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="thumbnail">
+            <% Event.all.each do |event| %>
+            <%= link_to image_tag(event.image, alt: event.name), event %>  
+            <% end %>   
+          </div> 
+        </div>
       </div>
     </div>
-</div>
+  </div>
+
+<!--       <div class="row">
+        <div class="col-md-6">
+           <%#= link_to "My Events", my_events_path(current_user.events.all), class: "btn btn-default" %>
+           <%#= button_to "Events I've Joined", my_joined_path(current_user.events), class: "btn btn-default" %>
+           <%#= button_to "Join a New Event", my_new_events_path(current_user.events), class: "btn btn-default" %>
+          </div>
+        </div>
+      </div> -->

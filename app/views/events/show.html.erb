@@ -1,17 +1,19 @@
-<div class="container">
-   <h1 class="page-header"><%= @event.name %> </h1>
+<div class="background container-fluid">
+   <h1 class="page-header"><%= @event.name %></h1>
+      <div class="row">
+        <div class="col-md-4">
+          <% if @event.admin_id == current_user.id %>
+          <%= link_to "EDIT", edit_event_path(@event), class: "btn btn-primary" %> 
+          <%= link_to "DELETE", event_path(@event), :method => :delete, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+        <!-- ************ ENSURES you can only join events if they have not reached their maximum capacity and the join button only shows up for users who haven't already joined the event and 
+      are not admin of the event ******************* -->
+
       <div class="thumbnail"><%= image_tag @event.image %></div>
           <div class="row">
             <div class="col-lg-12">
-              <% if @event.admin_id == current_user.id %>
-                <table>
-                  <td> <%= link_to "EDIT", edit_event_path(@event), class: "btn btn-primary" %> </td> 
-                  <td ><%= link_to "DELETE", event_path(@event), :method => :delete, class: "btn btn-danger" %>
-                  </td>
-                 </table>
-              <% end %>
-              <!-- ************ ENSURES you can only join events if they have not reached their maximum capacity and the join button only shows up for users who haven't already joined the event and 
-              are not admin of the event ******************* -->
 
               <% if @event.users.count <= @event.max_users && !(@event.users.include?(current_user)) %>
                 <%= button_to "JOIN!", event_join_path(@event.id), class: "btn btn-info" %>
@@ -23,16 +25,16 @@
             </div>
           </div>
         <div class="col-md-6">
-          <h4 class="section-title main-color">Where? </h4><p class="text-center"><%= @event.location %></p>
-          <h4 class="section-title main-color">When? </h4><p class="text-center"><%= @event.date_of_event %></p>
-          <h4 class="section-title main-color">How many guests have joined? </h4><p class="text-center"><%= @event.users.count  %></p>
-          <h4 class="section-title main-color">How many are invited? </h4><p class="text-center"><%= @event.max_users %></p>
-          <h4 class="section-title main-color">How much in total? </h4><p class="text-center">$<%= @event.total_price %></p>
-          <h4 class="section-title main-color">How much per person?</h4><p class="text-center">$<%= @event.price_per_person %></p>
-          <h4 class="section-title main-color">What's the plan? </h4><p class="text-center"><%= @event.description %></p>
-          <h4 class="section-title main-color">Read more: </h4><p class="text-center"><%= link_to @event.external_link %></p>
+          <h4 class="section-title main-color">Where? </h4><p class="text-center white"><%= @event.location %></p>
+          <h4 class="section-title main-color">When? </h4><p class="text-center white"><%= @event.date_of_event %></p>
+          <h4 class="section-title main-color">How many guests have joined? </h4><p class="text-center white"><%= @event.users.count  %></p>
+          <h4 class="section-title main-color">How many are invited? </h4><p class="text-center white"><%= @event.max_users %></p>
+          <h4 class="section-title main-color">How much in total? </h4><p class="text-center white">$<%= @event.total_price %></p>
+          <h4 class="section-title main-color">How much per person?</h4><p class="text-center white">$<%= @event.price_per_person %></p>
+          <h4 class="section-title main-color">What's the plan? </h4><p class="text-center white"><%= @event.description %></p>
+          <h4 class="section-title main-color">Read more: </h4><p class="text-center white"><%= link_to @event.external_link %></p>
           <h4 class="section-title main-color">Paid? </h4>
-            <p class="text-center">
+            <p class="text-center white">
                <% if @event.paid == false %>
               <em> not yet </em>
               <% elsif @event.paid == true %> 
@@ -53,10 +55,10 @@
                   </li>
                 </ul>
               </div>
-                  <h4 class="section-title main-color">Who's coming?</h4>
+                  <h3 class="section-title main-color">Who's coming?</h3>
                     <% @event.users.each do |user| %>
                       <%= link_to("http://twitter.com/#{user.twitter_handle}", target: "_blank") do %>
-                       <p class="text-center">@<%= user.twitter_handle %></p>
+                       <h4 class="text-center blue">@<%= user.twitter_handle %></h4>
                       <% end %>
                     <% end %>
                 

@@ -15,6 +15,7 @@ class EventsController < ApplicationController
    @event.admin_id = current_user.id
    @event.save
   redirect_to event_path(@event)
+  flash[:notice] = "Successfully created!"
   end
 
   def show
@@ -45,10 +46,14 @@ class EventsController < ApplicationController
   def pay
   # creates custom action only available to admin of event, to trigger the venmo fund transfer process,
   # once the guests have all accepted their invites (i.e. event reaches goal of max_users)
-  @event = Event.find(params[:id])
+    @event = Event.find(params[:id])
     @event.make_payment
     redirect_to event_path(@event)
     flash[:notice] = "Success! We are charging the guests now."
+  end
+
+  def my_events
+    @events = current_user.events.all
   end
 
   def destroy
