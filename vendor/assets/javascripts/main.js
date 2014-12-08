@@ -2,7 +2,6 @@ var dp = jQuery;
 //dp.noConflict();
 dp(document).ready(function() {
     //EXPANDING THUMBNAIL
-    Grid.init();
     // Superslides fullscreen slider
     dp('#slides').superslides({
         animation: 'fade', // Choose between slide or fade
@@ -93,11 +92,11 @@ dp(document).ready(function() {
     dp(".responsive-video").fitVids();
 
     //BACKSTRETCH
-    if(dp.fn.backstretch){
-        var bg_image = dp(".home-image");
-        var bg_image_src = bg_image.data("src");
-        bg_image.backstretch(bg_image_src);
-    }
+    // if(dp.fn.backstretch){
+    //     var bg_image = dp(".home-image");
+    //     var bg_image_src = bg_image.data("src");
+    //     bg_image.backstretch(bg_image_src);
+    // }
     //COUNT DOWN COMING SOON
     if (dp.fn.countdown) {
         var endDate = "December 31, 2014  15:03:25"; // <-- Change to your date launch.

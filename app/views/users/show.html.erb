@@ -1,19 +1,23 @@
-<div class = "event-links">
+
+<div class="header-box"></div>
+
+<div class="header text-right">
+  <% if current_user %>
+    Welcome, <% end %><%= current_user.name %>!
+</div>
+
+   <!-- LEFT SIDE -->
+
+
+  <%= image_tag current_user.twitter_image_url, class: "img-circle" %>
+
+
+  <div class = "event-links">
   <table>
     <tr>
       <td> <%= link_to "[create new event]", new_event_path %> </td> 
       <br>
       <td> <%= link_to "[my existing events]", events_path %> </td>
-   </tr>
-  </table>
+
 </div>
 
-<div class = "header">
-  <h1><% if current_user %>
-    Welcome, <% end %><%= current_user.name %>!
-  </h1>
-</div>
-
-<div class = "user-img">
-  <%= image_tag current_user.twitter_image_url %>
-</div>

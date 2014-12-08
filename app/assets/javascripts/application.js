@@ -13,8 +13,8 @@
 //= require jquery
 //= require bootstrap.min
 //= require html5shiv
+//= require_lib .
 //= require main
 //= require respond.min
-//= require_lib .
 //= require jquery_ujs
 //= require_tree .

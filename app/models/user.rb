@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
       user.uid               = auth["uid"]
       user.name              = auth["info"]["name"]
       user.twitter_handle    = auth["info"]["nickname"]
-      user.twitter_image_url = auth["info"]["image"]
+      user.twitter_image_url = auth["info"]["image"].sub("_normal", "")
     end
   end
 
