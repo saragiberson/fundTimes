@@ -1,4 +1,9 @@
-<h1> Welcome to fundtime$! </h1>
+<header id="welcome">
+  <div class="brand-name">fundtime$</div>
+  <hr class="colored">
+  <div class="brand-name-subtext">Group Payments Made Easy</div>
+  <a href="/auth/twitter" class="login"><spann class="twitter"></span></a>
+</header>
 
 <% if logged_in? %>
   <% current_user.events do |event| %>
