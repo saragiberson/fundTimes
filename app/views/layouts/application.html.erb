@@ -8,21 +8,23 @@
  <meta name="description" content="RINDU - One Page Business Template<">
  <meta name="author" content="Develpixel">
 
- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
- <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+ <%= stylesheet_link_tag    'application', media: 'all'%>
+ <%= javascript_include_tag 'application'%>
  <%= csrf_meta_tags %>o
 </head>
 <body>
  <% if current_user %>
   <%= render 'nav' %>
  <% end %>
- <% if flash[:error] %>
- <p class='error'><%=h flash[:error] %></p>
-<% end %>
 
-<% if flash[:notice] -%>
- <p class='notice'><%=h flash[:notice] %></p>
+<!-- FLASH MESSAGES -->
+<% if flash[:error] %>
+ <h2 class='error bg-info'><%=h flash[:error] %></h2>
 <% end %>
+<% if flash[:notice] -%>
+ <h2 class='notice bg-info'><%=h flash[:notice] %></h2>
+<% end %>
+<!-- END FLASH MESSAGES -->
 
  <%= yield %>
 </body>

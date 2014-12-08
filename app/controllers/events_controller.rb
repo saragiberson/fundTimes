@@ -14,7 +14,7 @@ class EventsController < ApplicationController
    @event.users << current_user
    @event.admin_id = current_user.id
    @event.save
-    redirect_to event_path(@event)
+  redirect_to event_path(@event)
   end
 
   def show
@@ -29,40 +29,33 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.update(event_params)
     redirect_to event_path(@event)
+    flash[:notice] = "Successfully updated!"
   end
 
   def join
     @event = Event.find(params[:id])
-    if (@event.admin_id == current_user.id) 
-      redirect_to event_path(@event)
-      flash[:notice] = "Sorry, Admins cannot join events as guests."
-    end
-    # checking to see if the event still has capacity for guest
-    if @event.users.count < @event.max_users
+    if @event.users.count < @event.max_users 
       @event.users << current_user
-      @event.save 
-    else
-      redirect_to event_path(@event)
-      flash[:notice] = "Sorry, but this event has fulfilled its maximum guest amount." 
-    end
-    # checking to see if it's time to charge the users
-    if @event.users.count == @event.max_users
-      binding.pry
-      @event.make_payment
-      redirect_to event_path(@event)
-      flash[:notice] = "you are going to this event. WE ARE CHARGING THE ADMIN NOW"
-  ### need to create custom button for admin-only to enable 
-  ### payment once the event is full (reached its invite goal)
-    elsif @event.users.count < @event.max_users 
+      @event.save
       redirect_to event_path(@event)
       flash[:notice] = "You're going to this event!!!"
     end
+  end
+
+  def pay
+  # creates custom action only available to admin of event, to trigger the venmo fund transfer process,
+  # once the guests have all accepted their invites (i.e. event reaches goal of max_users)
+  @event = Event.find(params[:id])
+    @event.make_payment
+    redirect_to event_path(@event)
+    flash[:notice] = "Success! We are charging the guests now."
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path
+    flash[:notice] = "Event has been successfully deleted."
   end
 
   private
