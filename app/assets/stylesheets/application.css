@@ -90,7 +90,10 @@ nav {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 background: no-repeat center center; 
-  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .item {
