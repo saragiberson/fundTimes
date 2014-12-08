@@ -1,46 +1,47 @@
-<table>
-   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
-    <br>
-   <td> <%= link_to "[my existing events]", events_path %> </td>
-    <br>
-   <% if @event.admin_id == current_user.id %>
-      <td ><%= link_to "[EDIT this event]", edit_event_path(@event) %> </td> 
-      <br>
-      <td ><%= link_to "[DELETE this event]", event_path(@event), :method => :delete %></td>
-   <% end %>
-</table>
-<h1> <%= @event.name %> </h1>
- <figure><%= image_tag @event.image %></figure>
-  <div> <%= button_to "Join this!", event_join_path(@event.id) %> </div>
-  <ul> 
-    <li>Where?  
-      <p><%= @event.location %></p></li>
-    <li>When? 
-    <p> <%= @event.date_of_event %></p></li>
-    <li>How many people have joined as a guest? 
-    <p> <%= @event.users.count  %> </p> </li>
-    <li>How many are invited (max): 
-      <p> <%= @event.max_users %> </p></li>
-    <li>How much total? 
-      <p> $<%= @event.total_price %></p></li>
-    <li>How much per person? 
-      <p> $<%= @event.price_per_person %></p></li>
-    <li>What are we planning? 
-      <p><%= @event.description %> </p></li>
-    <li>Read more: 
-      <p><%= link_to @event.external_link %> </p></li>
-  </ul>
- <h3>Tracking Progress</h3>
-  <ul> 
-    <li>Paid? 
-      <% if @event.paid == false %>
-        <em> Not yet </em>
-      <% elsif @event.paid == true %> 
-        <em> Payment fulfilled! </em>
-      <% end %>
-    </li>
-    <li>Currently, what is the rate of people who have joined to those who were invited? 
-     <strong> <%= @event.current_rate_of_attendance %> % </strong> 
-     <!-- leaves % in paragraph tag to show rate as a percent -->
-    </li>
-  </ul>
+<div class="container">
+   <h1 class="page-header"><%= @event.name %> </h1>
+      <div class="thumbnail"><%= image_tag @event.image %></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <% if @event.admin_id == current_user.id %>
+                <table>
+                  <td> <%= link_to "EDIT", edit_event_path(@event), class: "btn btn-primary" %> </td> 
+                  <td ><%= link_to "DELETE", event_path(@event), :method => :delete, class: "btn btn-danger" %></td>
+              <% else %>
+                <%= button_to "JOIN!", event_join_path(@event.id), class: "btn btn-info" %>
+                </table>
+              <% end %>
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-6">
+      <div class="skill-bar">
+      <ul>How many invitees have accepted?
+      <li>
+        <div class="bar" data-value="<%= @event.current_rate_of_attendance %>" 
+          style="width: <%= @event.current_rate_of_attendance %>%;">
+           <h5>Accepted Invites</h5>
+        </div>
+        <span><%=@event.users.count %>/<%=@event.max_users%></span>
+      </li>
+    </ul>
+</div>  
+      <h5> Where? <%= @event.location %></h5>
+      <h5> When? <%= @event.date_of_event %></h5>
+      <h5> How many people have joined as a guest? <%= @event.users.count  %> </h5>
+      <h5> How many are invited (max): <%= @event.max_users %> </h5>
+      <h5> How much total? $<%= @event.total_price %></h5>
+      <h5> How much per person? $<%= @event.price_per_person %></h5>
+      <h5> What are we planning? <%= @event.description %> </h5>
+      <h5> Read more: <%= link_to @event.external_link %> </h5> 
+      <h5>Paid? 
+         <% if @event.paid == false %>
+          <em> not yet </em>
+          <% elsif @event.paid == true %> 
+          <em> Payment fulfilled! </em>
+          <% end %>
+      </h5>
+    </div>
+  </div>
+</div>
+          

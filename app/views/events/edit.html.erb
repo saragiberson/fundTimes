@@ -1,48 +1,64 @@
-<table>
-   <td> <%= link_to "[my profile]", user_path(current_user) %> </td> 
-    <br>
-   <td> <%= link_to "[my existing events]", events_path %> </td>
-    <br>
-   <td><%= link_to "[DELETE this event]", event_path(@event), :method => :delete, confirm: "Are you sure?" %>
-   </td>
-</table>
-
-<h3> Edit <%= @event.name %> </h3>
-  <%= form_for @event do |f| %>
-  <%= f.label :name, "Event Name" %>
-  <br>
-  <%= f.text_field :name, :placeholder => @event.name %>
-  <br>
-  <br>
-  <%= f.label :image, "Image url" %><br>
-  <%= f.text_field :image, :placeholder => @event.image %>
-  <br>
-  <br>
-  <%= f.label :location, "Location of Event" %><br>
-  <%= f.text_field :location, :placeholder => @event.location %>
-  <br>
-  <br>
-  <%= f.label :external_link, "External Link for Event" %><br>
-  <%= f.text_field :external_link, :placeholder => @event.external_link %>
-  <br>
-  <br>
-  <%= f.label :date_select, "Event Date" %><br>
-  <%= f.date_select :date_of_event %>
-  <br>
-  <br>
-  <%= f.label :description, "Event Description" %><br>
-  <%= f.text_area :description, :placeholder => @event.description %>
-  <br>
-  <br>
-  <%= f.label :max_users, "Max # of Guests" %><br>
-  <%= f.number_field :max_users, :placeholder => @event.max_users %>
-  <br>
-  <br>
-  <%= f.label :total_price, "TOTAL PRICE" %><br>
-  <%= f.text_field :total_price, :placeholder => @event.total_price %>
-  <br>
-  <br>
-  <%= f.submit %>
-  <% end %>
-  <br>
+<div class="container-fluid">
+  <div class="col-lg-12">
+      <h1 class="page-header"> Edit <%= @event.name %> </h1>
+     <%= form_for @event, :class => "form-horizontal" do |f| %>
+      </div>
+          <div class="well form-action-container">
+      <div class="control-group">
+     <%= f.label :name, "Event Name" %>
+     </div>
+     <div class="controls">
+      <%= f.text_field :name, :placeholder => @event.name, class: "input-lg" %>
+      </div>
+      <div class="control-group">
+      <%= f.label :image, "Image url" %><br>
+     </div>
+     <div class="controls">
+      <%= f.text_field :image, :placeholder => @event.image, class: "input-lg" %>
+      </div>
+      <div class="control-group">
+      <%= f.label :location, "Location of Event" %><br>
+      </div>
+      <div class="controls">
+      <%= f.text_field :location, :placeholder => @event.location, class: "input-lg" %>
+      </div>
+      <div class="control-group">
+      <%= f.label :external_link, "External Link for Event" %><br>
+      </div>
+      <div class="controls">
+      <%= f.text_field :external_link, :placeholder => @event.external_link, class: "input-lg" %>
+      </div>
+      <div class="control-group">
+      <%= f.label :date_select, "Event Date" %><br>
+      </div>
+      <div class="controls">
+      <%= f.date_select :date_of_event %>
+      </div>
+      <div class="control-group">
+      <%= f.label :description, "Event Description" %><br>
+      </div>
+      <div class="controls">
+      <%= f.text_area :description, :placeholder => @event.description, class: "input-lg" %>
+      </div>
+      <div class="control-group">
+      <%= f.label :max_users, "Max # of Guests" %><br>
+      </div>
+      <div class="controls">
+      <%= f.number_field :max_users, :placeholder => @event.max_users %>
+      </div>
+      <div class="control-group">
+      <%= f.label :total_price, "TOTAL PRICE" %><br>
+      </div>
+      <div class="controls">
+      <%= f.text_field :total_price, :placeholder => @event.total_price, class: "input-sm" %>
+      </div>
+      <br />
+      <div class="controls">
+      <%= f.submit :class => "btn btn-primary btn-sml"  %>
+      <br />
+    <% end %>
+    </div>
+  </div>
+</div>
+ 
 

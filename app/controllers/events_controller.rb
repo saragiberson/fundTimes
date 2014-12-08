@@ -36,20 +36,26 @@ class EventsController < ApplicationController
     if (@event.admin_id == current_user.id) 
       redirect_to event_path(@event)
       flash[:notice] = "Sorry, Admins cannot join events as guests."
-      elsif 
-        (@event.total_guests.count +1) == @event.max_users
-        @event.make_payment
-        redirect_to event_path(@event)
-        flash[:notice] = "WE ARE CHARGING YOU NOW"
-      elsif 
-        (@event.total_guests.count +1) < @event.max_users
-        @event.users << current_user
-        @event.save 
-        redirect_to event_path(@event)
-        flash[:notice] = "You're going to this event!!!"
-      else
+    end
+    # checking to see if the event still has capacity for guest
+    if @event.users.count < @event.max_users
+      @event.users << current_user
+      @event.save 
+    else
       redirect_to event_path(@event)
       flash[:notice] = "Sorry, but this event has fulfilled its maximum guest amount." 
+    end
+    # checking to see if it's time to charge the users
+    if @event.users.count == @event.max_users
+      binding.pry
+      @event.make_payment
+      redirect_to event_path(@event)
+      flash[:notice] = "you are going to this event. WE ARE CHARGING THE ADMIN NOW"
+  ### need to create custom button for admin-only to enable 
+  ### payment once the event is full (reached its invite goal)
+    elsif @event.users.count < @event.max_users 
+      redirect_to event_path(@event)
+      flash[:notice] = "You're going to this event!!!"
     end
   end
 
@@ -70,4 +76,3 @@ class EventsController < ApplicationController
   end
 
 end
-

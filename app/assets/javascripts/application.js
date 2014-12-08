@@ -15,6 +15,6 @@
 //= require html5shiv
 //= require main
 //= require respond.min
-//= require_lib .
 //= require jquery_ujs
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
