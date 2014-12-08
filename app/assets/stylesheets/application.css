@@ -88,4 +88,38 @@ nav {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  background: no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.item {
+  opacity: 0.8;
+}
+
+.item:hover {
+  opacity: 1;
+}
+
+.item .event-name {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: Raleway;
+  display: none;
+}
+
+.item:hover .event-name {
+  display: block;
+}
+.event-name h3 {
+  font-size: 18px;
 }

@@ -1,20 +1,12 @@
-<div class="background container-fluid">
-    <h1 class="page-header">All Events</h1>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="thumbnail">
-            <% Event.all.each do |event| %>
-            <%= link_to image_tag(event.image, alt: event.name), event %>  
-            <% end %>   
-          </div> 
-        </div>
+<h1 class="page-header">All Events</h1>
+  <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
+    <% Event.all.each do |event| %>
+      <%= link_to event_path(event) do %>
+     <div class="item" style="background-image: url(<%= event.image %>);">
+      <div class="event-name">
+        <h3><%= event.name %></h3>
       </div>
     </div>
+      <% end %>
+    <% end %>
   </div>
-
-<div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-  <div class="item"></div>
-</div>
