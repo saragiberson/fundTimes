@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'user/venmo' => 'users#venmo', :as => :venmo
 
   post 'events/:id/join' => 'events#join', :as => :event_join
+  post 'events/:id/pay' => 'events#pay', :as => :event_pay
 
   get '/login' => 'application#home', :as => :login
 

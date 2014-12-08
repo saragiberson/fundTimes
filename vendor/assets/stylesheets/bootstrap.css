@@ -540,24 +540,30 @@ a.bg-primary:hover {
 }
 .bg-success {
   background-color: #dff0d8;
+  margin-top: 38px;
 }
 a.bg-success:hover {
   background-color: #c1e2b3;
 }
 .bg-info {
   background-color: #d9edf7;
+  margin-top: 38px;
 }
 a.bg-info:hover {
   background-color: #afd9ee;
 }
 .bg-warning {
   background-color: #fcf8e3;
+  margin-top: 38px;
+
 }
 a.bg-warning:hover {
   background-color: #f7ecb5;
 }
 .bg-danger {
   background-color: #f2dede;
+  margin-top: 38px;
+
 }
 a.bg-danger:hover {
   background-color: #e4b9b9;

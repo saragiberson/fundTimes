@@ -17,4 +17,5 @@
 //= require main
 //= require respond.min
 //= require jquery_ujs
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
