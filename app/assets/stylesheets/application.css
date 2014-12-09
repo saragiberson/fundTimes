@@ -41,8 +41,8 @@
   height: 60px;
 }
 
-.welcome {
-  background-image: image-url('coffee.jpg');
+#welcome {
+  background-image: url('concert.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -52,7 +52,7 @@
   padding-top: 60px;
 }
 
-.navbar .container {
+.navbar {
   width: 95%;
 }
 

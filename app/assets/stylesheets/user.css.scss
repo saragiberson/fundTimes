@@ -24,7 +24,7 @@
   position: relative;
   z-index: 100;
   color: white;
-  padding-top: 60px;
+  padding-top: 80px;
   padding-right: 10px;
   font-weight: 100 !important;
   letter-spacing: 2px;
@@ -36,8 +36,13 @@
 .section-title{
   font-family: 'Raleway', sans-serif;
   font-size: 1.8em;
+  font-weight: 800;
+  text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: #4cddf3;
   text-transform: uppercase;
   color: white;
   padding-top: 60px;
   padding-bottom: 40px;
+
 }
