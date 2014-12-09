@@ -9,16 +9,21 @@
 <!-- LEFT SIDE -->
 <div class="row">
   <div class="col-md-4">  
-    <%= image_tag current_user.twitter_image_url, class: "img-circle" %>
+    <%= image_tag current_user.twitter_image_url, class: "img-circle"%>
 
-    <div class = "event-links">
+    <div class="event-links">
      <%= link_to "[create new event]", new_event_path %> 
       <br>
      <%= link_to "[my existing events]", events_path %> 
     </div>
   </div>
 
+  <!-- RIGHT SIDE -->
+
   <div class="col-md-8">
+    <div class="section-title">
+      My Events
+    </div>
     <div class="masonry js-masonry"  data-masonry-options='{"isFitWidth": true, "gutter": 10}'>
        <% @events.each do |event| %>
           <%= link_to event_path(event) do %>

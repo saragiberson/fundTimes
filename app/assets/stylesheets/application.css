@@ -41,7 +41,7 @@
   height: 60px;
 }
 
-#welcome {
+.welcome {
   background-image: image-url('coffee.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,6 +49,7 @@
   color: white;
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
+  padding-top: 60px;
 }
 
 .navbar .container {
