@@ -1,0 +1,30 @@
+.twitter_white, .twitter_blue{
+  background: url(sprites.png) no-repeat;
+}
+
+.twitter_white{
+  background-position: 0 0;
+  width: 40px;
+  height: 32px;
+}
+
+.twitter_blue{
+  background-position: -49px 0;
+  width: 40px;
+  height: 33px;
+}
+
+.twitter{
+  display: block;
+  background-image: image-url('sprites.png');
+  margin: 0 auto;
+  width: 40px;
+  height: 33px;
+  &:hover{
+    background-position: -49px 0
+  };
+}
+
+.login {
+  padding: 10px;
+}
