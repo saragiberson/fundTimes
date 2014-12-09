@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require bootstrap.min
 //= require masonry/jquery.masonry
 //= require masonry/box-maker
