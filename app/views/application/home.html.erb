@@ -1,7 +1,15 @@
-<div id="welcome">
-  <div class="brand-name">fundtime$</div>
-  <div class="brand-name-subtext">Group Payments Made Easy</div>
-  <a href="/auth/twitter" class="login"><spann class="twitter"></span></a>
+<div class="background-img" style="background-image: url('<%= image_path('concert.jpg')%>');"></div>
+
+<div class="header-center fade-in text-center">
+    <h1>Welcome To
+        <span>Fundtime<span class="main-color">$</span></span>
+    </h1>
+    <p>Group Payments Made Easy</p>
+    <br>
+    <div class="twitter">
+    <p> To start, <span class="main-color">login</span> with your twitter!</p>
+      <a href="/auth/twitter" class="login" style="border:none;"><span class="twitter"></span></a>
+    </div>
 </div>
 
 <% if logged_in? %>
