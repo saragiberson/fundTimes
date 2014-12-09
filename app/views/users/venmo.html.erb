@@ -1,8 +1,5 @@
-<div class="welcome">
-  HEY <%= current_user.name %>, you're almost there!
-  <br>
-  One more step and you're ready to start using FUNDTIME$! Just login with your Venmo account  join your friends' events or create your own events! Enjoy!
+
+
 <% if current_user %>
   <%= link_to 'Authorize Venmo', venmo_login_path %>
 <% end %>
-</div>
