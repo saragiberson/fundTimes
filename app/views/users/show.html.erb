@@ -1,7 +1,6 @@
 
-<div class="header-box"></div>
 
-<div class="header text-right">
+<div class="header text-right extra-bottom">
   <% if current_user %>
     Welcome, <% end %><%= current_user.name %>!
 </div>
@@ -9,25 +8,24 @@
 <!-- LEFT SIDE -->
 <div class="row">
   <div class="col-md-4">  
-    <%= image_tag current_user.twitter_image_url, class: "img-circle"%>
 
-    <div class="event-links">
+    <%= image_tag current_user.twitter_image_url, class: "img-circle img-left"%>
+
      <%= link_to "CREATE AN EVENT  →", new_event_path, class: ["btn-outline", "white", "animated", "fadeIn"] %> 
       <br>
       <br>
       <br>
        <%= link_to "JOIN AN EVENT →", events_path, class: ["btn-outline", "white", "animated", "fadeIn"] %> 
-    </div>
 
     <!-- <a href="javascript:;"class="btn-outline white animated fadeIn" data-effect="fadeIn">CREATE AN EVENT&nbsp;&nbsp;→</a> -->
+
   </div>
+
 
   <!-- RIGHT SIDE -->
 
   <div class="col-md-8">
-    <div class="section-title text-left">
-      My Event<span class="main-color">$</span>
-    </div>
+
     <div class="masonry js-masonry"  data-masonry-options='{"isFitWidth": true, "gutter": 10}'>
        <% @events.each do |event| %>
           <%= link_to event_path(event) do %>
@@ -37,9 +35,11 @@
           </div>
         </div>
         <% end %>
-      <% end %>
-    
+      <% end %>  
+      </div>
+
     </div>
+
   </div>
 </div>
 
