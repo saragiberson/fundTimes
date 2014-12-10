@@ -135,3 +135,7 @@ background: no-repeat center center;
 .event-name h3 {
   font-size: 18px;
 }
+
+.nav-list-color {
+  color: ##4cddf3;
+}
