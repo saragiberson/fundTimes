@@ -97,6 +97,7 @@ nav {
   background: #D26;
   position: relative;
   margin-bottom: 10px;
+  margin-left: 10px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -109,7 +110,7 @@ background: no-repeat center center;
 }
 
 .item {
-  opacity: 0.8;
+  opacity: 0.8g;
 }
 
 .item:hover {
