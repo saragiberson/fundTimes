@@ -143,15 +143,15 @@ background: no-repeat center center;
 
 
 .notice {
-  padding-top: 2%;
+  padding-top: 2% !important;
 }
 
 .background {
-  background-color: black;
+  background-color: black !important;
 }
 
 div .col-md-4 .btn {
-  margin-bottom: 2%;
+  margin-bottom: 2% !important;
 }
 
 .img-circle {
@@ -186,10 +186,10 @@ div .col-md-4 .btn {
 }
 
 .col-md-6 {
-  position: relative;
-  width: 20%;
-  margin-left: 17%;
-  margin-right: 15%;
+  position: relative !important;
+  width: 20% !important;
+  margin-left: 17% !important;
+  margin-right: 15% !important;
 }
 
 h4 {
@@ -198,9 +198,8 @@ h4 {
 }
 
 .main-color {
-  font-family: "Raleway";
-  font-size: 1em;
-/*  padding-right: 8px;*/
+  font-family: "Raleway" !important;
+  font-size: 1em !important;
   font-weight: lighter;
   text-transform: uppercase;
   line-height: 1em;
@@ -222,17 +221,17 @@ h4.white {
 }
 
 .button-holder {
-  padding:25px 0 50px; 
+  padding:25px 0 50px !important; 
   .btn {
-    opacity: 0.4;
+    opacity: 0.4 !important;
   }
-  &:hover .btn{
-    opacity: 1.0;
+  &:hover .btn{ 
+    opacity: 1.0 !important;
   }
 }
 
 .form-group {
-  width: 100%;
+  width: 100% !important;
 }
 
 .form-group .input-lg {
