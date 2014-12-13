@@ -91,56 +91,55 @@ nav {
 }
 
 .masonry .item {
-  width:  300px;
-  height: 300px;
-  float: left;
-  background: #D26;
-  position: relative;
-  margin-bottom: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-background: no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: black;
+  width:  300px !important;
+  height: 300px !important;
+  float: left !important;
+  background: #D26 !important;
+  position: relative !important;
+  margin-bottom: 10px !important;
+  -webkit-box-sizing: border-box !important;
+     -moz-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+background: no-repeat center center !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-color: black !important;
 }
 
 .item {
-  opacity: 0.8;
+  opacity: 0.8 !important;
 }
 
 .item:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .item .event-name {
 
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  width: 100%;
-  background: rgba(0,0,0,0.5);
-  position: absolute;
-  padding: 10px;
-  bottom: 0;
-  color: white;
-  display: none;
+  text-align: center !important;
+  font-family: 'Raleway', sans-serif !important;
+  text-transform: uppercase !important;
+  width: 100% !important;
+  background: rgba(0,0,0,0.5) !important;
+  position: absolute !important;
+  padding: 10px !important;
+  bottom: 0 !important;
+  color: white !important;
+  display: none !important;
 }
 
-.item:hover .event-name{
-  display: block;
+.item:hover .event-name {
+  display: block !important;
 }
 .event-name h3 {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 
 .nav-list-color {
-  color: #4cddf3;
+  color: #4cddf3 !important;
 }
-
 
 .notice {
   padding-top: 2% !important;
@@ -251,10 +250,6 @@ h4.white {
   margin: 0 auto;
 }
 
-.img-circle {
-  height: 250px;
-  width: 250px;
-}
 
 .header-box {
   width: 100%;
@@ -294,8 +289,8 @@ h4.white {
 }
 
 .img-left {
-  margin-left: 5%;
-  margin-top: -20%;
+  margin-left: 5% !important;
+  margin-top: -20% !important;
 }
 
 .btn-outline {
