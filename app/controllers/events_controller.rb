@@ -2,7 +2,7 @@ class EventsController < ApplicationController
    helper_method :user_admin?
 
   def index
-    @events = current_user.events.all
+    @events = Event.all
   end
 
   def new
