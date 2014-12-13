@@ -2,7 +2,9 @@ class EventsController < ApplicationController
    helper_method :user_admin?
 
   def index
-    @events = Event.all
+    @events = Event.where("users != {params[:current_user]}")
+
+    # Client.where("orders_count = #{params[:orders]}")
   end
 
   def new
