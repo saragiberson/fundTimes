@@ -1,8 +1,6 @@
 <h1 class="page-header">Join an Event!</h1> 
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
     <% @events.each do |event| %>
-      <% event.users.each do |user| %>
-        <% if user.id != current_user.id %>
           <%= link_to event_path(event) do %>
             <div class="item" style="background-image: url(<%= event.image %>);">
               <div class="event-name">
@@ -11,9 +9,5 @@
             </div>
            <% end %>
         <% end %>
-      <% end %>
-    <% else %>
-      <p> it didnt work </p>
-  <% end %>
   </div>
 
