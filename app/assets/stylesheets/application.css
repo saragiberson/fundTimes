@@ -155,10 +155,10 @@ div .col-md-4 .btn {
 }
 
 .img-circle {
-  width: 300px;
-  height: 300px;
-  margin-left: 55%;
-  margin-bottom: 40px;
+  width: 300px !important;
+  height: 300px !important;
+  margin-left: 55% !important;
+  margin-bottom: 40px !important;
 }
 
 .skill-bar {
@@ -202,7 +202,7 @@ h4 {
   font-size: 1em !important;
   font-weight: lighter;
   text-transform: uppercase;
-  line-height: 1em;
+  line-height: 1em !important;
 }
 
 .btn-dark {
@@ -309,10 +309,8 @@ h4.white {
 }
 
 .extra-bottom {
-  padding-bottom: 8%;
+  padding-bottom: 8% !important;
 }
 
 
-.body {
-  background-color: black;
-}
+
