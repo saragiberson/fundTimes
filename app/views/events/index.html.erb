@@ -2,14 +2,14 @@
   <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
     <% Event.all.each do |event| %>
       <% event.users.each do |user| %>
-        <% if current_user.id != user.id %>
+        <% if current_user != user %>
               <%= link_to event_path(event) do %>
               <div class="item" style="background-image: url(<%= event.image %>);">
                   <div class="event-name">
                     <h3><%= event.name %></h3>
                   </div>
               </div>
-            <% end %>g
+            <% end %>
         <% end %>
       <% end %>
     <% end %>
