@@ -1,15 +1,4 @@
-<h1 class="page-header">My Events</h1> 
-  <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
-    <% current_user.events.each do |event| %>
-      <%= link_to event_path(event) do %>
-     <div class="item" style="background-image: url(<%= event.image %>);">
-      <div class="event-name">
-        <h3><%= event.name %></h3>
-      </div>
-    </div>
-      <% end %>
-    <% end %>
-  <h1>Join an Event</h1> 
+  <h1 class="page-header">Join an Event</h1> 
     <div class="masonry js-masonry"  data-masonry-options='{ "isFitWidth": true, "gutter": 10}'>
     <% Events.all.each do |event| %>
       <% event.users.each do |user| %>
