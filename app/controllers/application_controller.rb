@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def venmo?
     unless current_user.venmo_encrypted_token
-      redirect_to venmo_path
+      redirect_to venmo_login
     end
   end
 end
