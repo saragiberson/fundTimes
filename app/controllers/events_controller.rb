@@ -2,9 +2,9 @@ class EventsController < ApplicationController
    helper_method :user_admin?
 
   def index
-    @events = Event.where("users != {params[:current_user]}")
+    @events = Event.where.not(admin: current_user)
 
-    # Client.where("orders_count = #{params[:orders]}")
+    # displays all events for which current user is not admin
   end
 
   def new
