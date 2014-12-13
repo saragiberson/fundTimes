@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#create', :as => :oauth_login
   get '/logout'  => 'sessions#destroy', :as => :logout
-  get '/auth/venmo', as: 'venmo_login'
-  get 'user/venmo' => 'users#venmo', :as => :venmo
+  # get '/auth/venmo', as: 'venmo_login'
+  get '/auth/venmo' => 'users#venmo', :as => :venmo
 
   post 'events/:id/join' => 'events#join', :as => :event_join
   post 'events/:id/pay' => 'events#pay', :as => :event_pay

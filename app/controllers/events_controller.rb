@@ -10,10 +10,10 @@ class EventsController < ApplicationController
   end
 
   def create 
-   @event = Event.create(event_params)
-   @event.users << current_user
-   @event.admin_id = current_user.id
-   @event.save
+    @event = Event.create(event_params)
+    @event.users << current_user
+    @event.admin_id = current_user.id
+    @event.save
   redirect_to event_path(@event)
   flash[:notice] = "Successfully created!"
   end
