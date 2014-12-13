@@ -140,3 +140,108 @@ background: no-repeat center center;
 .nav-list-color {
   color: #4cddf3;
 }
+
+
+.notice {
+  padding-top: 2%;
+}
+
+.background {
+  background-color: black;
+}
+
+div .col-md-4 .btn {
+  margin-bottom: 2%;
+}
+
+.img-circle {
+  width: 300px;
+  height: 300px;
+  margin-left: 55%;
+  margin-bottom: 40px;
+}
+
+.skill-bar {
+ padding-left: 20%;
+ padding-bottom: 10%;
+}
+
+.skill-bar ul li h5 {
+  color: #000;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  font-weight: bolder;
+}
+
+.page-header {
+  color: #fff;
+  font-family: "Raleway";
+  letter-spacing: 0.01em;
+  font-size: 1.8em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  border: none;
+  text-align: center;
+  padding-top: 4%;
+}
+
+.col-md-6 {
+  position: relative;
+  width: 20%;
+  margin-left: 17%;
+  margin-right: 15%;
+}
+
+h4 {
+  font-family: "Raleway";
+  font-weight: bolder;
+}
+
+.main-color {
+  font-family: "Raleway";
+  font-size: 1em;
+/*  padding-right: 8px;*/
+  font-weight: lighter;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.btn-dark {
+  background-color: #999;
+  color: #111;
+  border-color: transparent;
+}
+
+h4.white {
+  font-family: "Raleway";
+  font-size: 1em;
+  padding-right: 8px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.button-holder {
+  padding:25px 0 50px; 
+  .btn {
+    opacity: 0.4;
+  }
+  &:hover .btn{
+    opacity: 1.0;
+  }
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group .input-lg {
+  width: 500px;
+}
+
+.form-group .control-group .controls #event_max_users, #event_total_price {
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
