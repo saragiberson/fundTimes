@@ -28,7 +28,6 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
- *= require_tree .
  */
 
  html, body{
