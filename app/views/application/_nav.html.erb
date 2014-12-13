@@ -19,7 +19,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <%= link_to "HOME", root_path %>
+                <%= link_to "HOME", root_path %>
                 </li>
                 <% if current_page?(events_path) %>
                 <li>
@@ -29,9 +29,11 @@
                 <li>
                     <%= link_to 'EVENTS', events_path, id: "my_events" %>
                 </li>
+                <% if current_user %>
                 <li>
                     <%= link_to "SIGN OUT", logout_path %>
                 </li>
+                <% end %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
