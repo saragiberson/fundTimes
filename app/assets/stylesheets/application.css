@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_self
+ *= require style-dark
  *= require 'masonry/basic'
  *= require 'masonry/centered'
  *= require 'masonry/fluid'
@@ -18,7 +19,6 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
- *= require style-dark
  *= require bootstrap-theme.min
  *= require bootstrap.min
  *= require 'masonry/basic'
@@ -105,6 +105,7 @@ background: no-repeat center center;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: black;
 }
 
 .item {
