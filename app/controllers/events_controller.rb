@@ -2,7 +2,7 @@ class EventsController < ApplicationController
    helper_method :user_admin?
 
   def index
-    @events = Event.where.not(admin: current_user)
+    @events = UserEvent.where.not(user_id: current_user.id)
 
     # displays all events for which current user is not admin
   end
