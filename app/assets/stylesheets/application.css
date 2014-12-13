@@ -109,25 +109,25 @@ background: no-repeat center center;
 }
 
 .item {
-  opacity: 0.8 !important;
+  opacity: 0.8;
 }
 
 .item:hover {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .item .event-name {
 
-  text-align: center !important;
-  font-family: 'Raleway', sans-serif !important;
-  text-transform: uppercase !important;
-  width: 100% !important;
-  background: rgba(0,0,0,0.5) !important;
-  position: absolute !important;
-  padding: 10px !important;
-  bottom: 0 !important;
-  color: white !important;
-  display: none !important;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  color: white;
+  display: none;
 }
 
 .item:hover .event-name {
